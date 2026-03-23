@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSH Skill - 高性能 SSH 操作技能</title>
+    <style>
+:root {
+  color-scheme: light dark;
+}
+body {
+  background: #f6f8fa;
+  color: #24292f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+  margin: 0;
+}
+.page {
+  margin: 0 auto;
+  max-width: 860px;
+  padding: 32px 20px 64px;
+}
+.meta {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  padding: 20px 24px;
+}
+.meta h1 {
+  font-size: 32px;
+  line-height: 1.25;
+  margin: 0 0 16px;
+}
+.meta-list {
+  color: #57606a;
+  display: grid;
+  gap: 8px;
+}
+.topic-body {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 28px 32px;
+}
+.topic-body img {
+  border-radius: 10px;
+  display: block;
+  height: auto;
+  margin: 16px auto;
+  max-width: 100%;
+}
+.topic-body pre {
+  background: #0d1117;
+  border-radius: 10px;
+  color: #e6edf3;
+  overflow-x: auto;
+  padding: 16px;
+}
+.topic-body code {
+  background: rgba(175, 184, 193, 0.2);
+  border-radius: 6px;
+  padding: 0.15em 0.35em;
+}
+.topic-body pre code {
+  background: transparent;
+  padding: 0;
+}
+.topic-body blockquote {
+  border-left: 4px solid #0969da;
+  color: #57606a;
+  margin: 16px 0;
+  padding: 8px 0 8px 16px;
+}
+.topic-body table {
+  border-collapse: collapse;
+  display: block;
+  margin: 16px 0;
+  overflow-x: auto;
+  width: 100%;
+}
+.topic-body th,
+.topic-body td {
+  border: 1px solid #d0d7de;
+  padding: 8px 12px;
+}
+.topic-body a {
+  color: #0969da;
+  text-decoration: none;
+}
+.topic-body a:hover {
+  text-decoration: underline;
+}
+.topic-body aside.onebox {
+  border: 1px solid #d0d7de;
+  border-radius: 10px;
+  margin: 16px 0;
+  padding: 16px;
+}
+</style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="meta">
+        <h1>SSH Skill - 高性能 SSH 操作技能</h1>
+        <div class="meta-list">
+          <div>作者：badseal</div>
+          <div>发布时间：2026-03-16T03:53:11.724Z</div>
+          <div>原帖链接：<a href="https://linux.do/t/topic/1763330">https://linux.do/t/topic/1763330</a></div>
+        </div>
+      </section>
+      <article class="topic-body">
+        <h4><a name="p-15116848-h-1" class="anchor" href="#p-15116848-h-1" aria-label="标题链接"></a>本帖使用社区公益推广，符合推广要求。我申明并遵循社区要求的以下内容：</h4>
+<ul>
+<li><strong>我的项目是免费使用的，无收费（变相收费、赞助）部分：</strong> 是</li>
+<li><strong>我的帖子已经打上 <a class="hashtag-cooked" href="/tag/1515-tag/1515" data-type="tag" data-slug="公益推广" data-id="1515" data-style-type="icon" data-icon="tag"><span class="hashtag-icon-placeholder"><svg class="fa d-icon d-icon-square-full svg-icon svg-node"><use href="#square-full"></use></svg></span><span>公益推广</span></a> 标签：</strong> 是</li>
+<li><strong>我的项目属于个人项目，与公司或商业机构无关：</strong> 是</li>
+<li><strong>我的项目不存在QQ、TG等群组引流：</strong> 是</li>
+<li><strong>我的项目不存在非运营必要的网站引流：</strong> 是</li>
+<li><strong>我的项目不存在为他人推广、AFF：</strong> 是</li>
+<li><strong>我的项目无关联的商业项目：</strong> 是</li>
+<li><strong>我的 GitHub 项目无未开源部分：</strong> 是</li>
+<li><strong>我的站点存在登录，并已接入 LINUX DO Connect：</strong> 否</li>
+<li><strong>我帖子内的项目介绍，AI生成、润色内容部分已截图发出：</strong> 是</li>
+<li><strong>以上选择我承诺是永久有效的，接受社区和佬友监督：</strong> 是</li>
+</ul>
+<p><em>以下为项目介绍正文内容，AI生成、润色内容已使用截图方式发出</em></p>
+<hr>
+<p>我平时工作中，会使用claude code连接多个服务器进行工作，让AI直接使用openssh比较麻烦，而且很多细节上，AI处理不太好，会多次尝试，虽然也能达到目的，但是耽误了时间。这个skill就是为了解决这个问题开发的。</p>
+<p><strong>主要特点</strong>：</p>
+<ul>
+<li>高性能（调用原生openssh功能）</li>
+<li>长连接守护进程</li>
+<li>超大文件传输</li>
+<li>服务器间直连</li>
+<li>统一配置管理（使用openssh原生配置格式，在终端可直接使用，例如ssh server1）</li>
+<li>对密码连接的服务器，采用Paramiko实现长连接</li>
+</ul>
+<p>我开发的这个skill已经在实际工作中用了半年了，功能基本完善，分享给大家。</p>
+<p>欢迎各位佬star</p>
+<aside class="onebox githubrepo" data-onebox-src="https://github.com/badseal/ssh-skill">
+  <header class="source">
+
+      <a href="https://github.com/badseal/ssh-skill" target="_blank" rel="noopener nofollow ugc">github.com</a>
+  </header>
+
+  <article class="onebox-body">
+    <div class="github-row" data-github-private-repo="false">
+  <img width="690" height="344" src="assets/001.png" class="thumbnail" data-dominant-color="EDEFEE">
+
+  <h3><a href="https://github.com/badseal/ssh-skill" target="_blank" rel="noopener nofollow ugc">GitHub - badseal/ssh-skill: 为 Claude Code 打造的企业级 SSH 管理工具，让远程服务器操作像本地一样简单高效</a></h3>
+
+    <p><span class="github-repo-description">为 Claude Code 打造的企业级 SSH 管理工具，让远程服务器操作像本地一样简单高效</span></p>
+</div>
+
+  </article>
+
+  <div class="onebox-metadata">
+    
+    
+  </div>
+
+  <div style="clear: both"></div>
+</aside>
+
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn3.linux.do/original/4X/f/5/d/f5d9e4422c072e989fcb553ff432b8113d00b66c.png" data-download-href="/uploads/short-url/z4TOhemKQvPKqBTKrxCCFNeAiu0.png?dl=1" title="image"><img src="assets/002.png" alt="image" data-base62-sha1="z4TOhemKQvPKqBTKrxCCFNeAiu0" width="591" height="499" srcset="https://cdn3.linux.do/optimized/4X/f/5/d/f5d9e4422c072e989fcb553ff432b8113d00b66c_2_591x499.png, https://cdn3.linux.do/optimized/4X/f/5/d/f5d9e4422c072e989fcb553ff432b8113d00b66c_2_886x748.png 1.5x, https://cdn3.linux.do/original/4X/f/5/d/f5d9e4422c072e989fcb553ff432b8113d00b66c.png 2x" data-dominant-color="F6F6F7"><div class="meta"><svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true"><use href="#far-image"></use></svg><span class="filename">image</span><span class="informations">1074×908 71.3 KB</span><svg class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true"><use href="#discourse-expand"></use></svg></div></a></div><p></p>
+<hr>
+<p><strong>2026年3月22日：更新预告</strong></p>
+<p>最近在升级ssh-skill，<strong>增加了“ssh tunnel”功能</strong>，主要目的是为了解决AI和我们自己访问服务器上的一些内部服务和站点。</p>
+<p>比如：服务器上有mysql服务，但是为了安全，未开放3306端口，这时候AI就会通过SSH登录到服务器，然后执行mysql命令来完成工作，在实际工作中，经常会出现ssh指令后，带着一大串mysql指令，命令超长时，出错几率会大很多且难调试。</p>
+<p>通过tunnel,可以把远程mysql端口直接映射到本地，直接访问localhost:3306即可。</p>
+<p>服务器端的内部站点也如此，把80端口映射到本地即可实现本地访问。</p>
+<p>甚至是，服务器端的服务，如果在docker容器中，且没有映射端口到主机，ssh tunnel也能够把容器内的端口，直接映射到本地。</p>
+<p>最近实测，映射到本地，AI在访问和理解时，除了效率高很多以外，执行命令时，也不必把很多命令组合在一起了，每一条命令返回的信息都可以被AI识别再进行后续处理，准确度和流程度明显提高。</p>
+<p>在claude code中，基本也是一句话搞定：</p>
+<blockquote>
+<p>“建立到 dev-001 的 SSH 隧道，目标是容器 18.0.0.20 的 MySQL”<br>
+或者更简单<br>
+“把dev-001服务器中的mysql容器，映射到本地”</p>
+</blockquote>
+<p>然后，ssh-skill会创建一个运行在后台的agent，此时无论在claude code内部，还是本机的任何软件，都可以访问到这个本地的服务和站点。</p>
+<p>现在已经在工作中使用了1周左右，预计4月正式更新版本。</p>
+<p>感谢各位佬对ssh-skill的关注。</p>
+      </article>
+    </main>
+  </body>
+</html>
