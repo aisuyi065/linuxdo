@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我的知识库开源啦～～～</title>
+    <style>
+:root {
+  color-scheme: light dark;
+}
+body {
+  background: #f6f8fa;
+  color: #24292f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+  margin: 0;
+}
+.page {
+  margin: 0 auto;
+  max-width: 860px;
+  padding: 32px 20px 64px;
+}
+.meta {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  padding: 20px 24px;
+}
+.meta h1 {
+  font-size: 32px;
+  line-height: 1.25;
+  margin: 0 0 16px;
+}
+.meta-list {
+  color: #57606a;
+  display: grid;
+  gap: 8px;
+}
+.topic-body {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 28px 32px;
+}
+.topic-body img {
+  border-radius: 10px;
+  display: block;
+  height: auto;
+  margin: 16px auto;
+  max-width: 100%;
+}
+.topic-body pre {
+  background: #0d1117;
+  border-radius: 10px;
+  color: #e6edf3;
+  overflow-x: auto;
+  padding: 16px;
+}
+.topic-body code {
+  background: rgba(175, 184, 193, 0.2);
+  border-radius: 6px;
+  padding: 0.15em 0.35em;
+}
+.topic-body pre code {
+  background: transparent;
+  padding: 0;
+}
+.topic-body blockquote {
+  border-left: 4px solid #0969da;
+  color: #57606a;
+  margin: 16px 0;
+  padding: 8px 0 8px 16px;
+}
+.topic-body table {
+  border-collapse: collapse;
+  display: block;
+  margin: 16px 0;
+  overflow-x: auto;
+  width: 100%;
+}
+.topic-body th,
+.topic-body td {
+  border: 1px solid #d0d7de;
+  padding: 8px 12px;
+}
+.topic-body a {
+  color: #0969da;
+  text-decoration: none;
+}
+.topic-body a:hover {
+  text-decoration: underline;
+}
+.topic-body aside.onebox {
+  border: 1px solid #d0d7de;
+  border-radius: 10px;
+  margin: 16px 0;
+  padding: 16px;
+}
+</style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="meta">
+        <h1>我的知识库开源啦～～～</h1>
+        <div class="meta-list">
+          <div>作者：viliss</div>
+          <div>发布时间：2026-03-25T15:40:37.984Z</div>
+          <div>原帖链接：<a href="https://linux.do/t/topic/1814969">https://linux.do/t/topic/1814969</a></div>
+        </div>
+      </section>
+      <article class="topic-body">
+        <p>我来晚啦，佬友们，本来昨天就想把docker环境测试跑通然后发布的。昨天下午午睡了3小时，想着通宵把最后的测试和文件整理。然后看到教育界某网红cs，吓的我将近一点就睡觉了，狗命要紧…</p>
+<h4><a name="p-15636183-h-1" class="anchor" href="#p-15636183-h-1" aria-label="标题链接"></a>本帖使用社区公益推广，符合推广要求。我申明并遵循社区要求的以下内容：</h4>
+<ul>
+<li><strong>我的项目是免费使用的，无收费（变相收费、赞助）部分：</strong> 是</li>
+<li><strong>我的帖子已经打上 <a class="hashtag-cooked" href="/tag/1515-tag/1515" data-type="tag" data-slug="公益推广" data-id="1515" data-style-type="icon" data-icon="tag"><span class="hashtag-icon-placeholder"><svg class="fa d-icon d-icon-square-full svg-icon svg-node"><use href="#square-full"></use></svg></span><span>公益推广</span></a> 标签：</strong> 是</li>
+<li><strong>我的项目属于个人项目，与公司或商业机构无关：</strong> 是</li>
+<li><strong>我的项目不存在QQ、TG等群组引流：</strong> 是</li>
+<li><strong>我的项目不存在非运营必要的网站引流：</strong> 是</li>
+<li><strong>我的项目不存在为他人推广、AFF：</strong> 是</li>
+<li><strong>我的项目无关联的商业项目：</strong> 是</li>
+<li><strong>我的站点存在登录，并已接入 LINUX DO Connect：</strong>  否</li>
+<li><strong>我帖子内的项目介绍，AI生成、润色内容部分已截图发出：</strong> 是</li>
+<li><strong>以上选择我承诺是永久有效的，接受社区和佬友监督：</strong> 是</li>
+</ul>
+<p><em>以下为项目介绍正文内容，AI生成、润色内容已使用截图方式发出</em></p>
+<hr>
+<p>好了，接下来就是正题<br>
+<a href="https://github.com/veyliss/ai-localbase" rel="noopener nofollow ugc">ai-localbase（AI本地知识库）</a></p>
+<h1><a name="p-15636183-ai-localbase-2" class="anchor" href="#p-15636183-ai-localbase-2" aria-label="标题链接"></a>AI LocalBase</h1>
+<p>一个本地优先的 AI 知识库系统（RAG），用于把本地文档接入向量检索与大模型对话流程。项目提供完整的 Web UI，支持知识库管理、文档上传、检索增强问答、聊天记录持久化，以及基于 Ollama 或 OpenAI 兼容接口的模型接入。</p>
+<p>后端基于 Go + Gin，前端基于 React + Vite + TypeScript，向量数据库使用 Qdrant，适合个人或小团队在本地环境、自托管环境中快速搭建可用的知识库问答系统。</p>
+<h2><a name="p-15636183-h-3" class="anchor" href="#p-15636183-h-3" aria-label="标题链接"></a>功能特性</h2>
+<h3><a name="p-15636183-h-4" class="anchor" href="#p-15636183-h-4" aria-label="标题链接"></a>核心能力</h3>
+<ul>
+<li>知识库管理：创建、删除知识库，查看文档列表</li>
+<li>文档上传与索引：支持 TXT、Markdown、PDF 文件上传与解析</li>
+<li>检索增强问答：基于 Qdrant 做向量检索并把命中内容注入对话上下文</li>
+<li>聊天记录持久化：会话消息保存到本地 SQLite 数据库，重启后仍可恢复</li>
+<li>配置持久化：模型配置与知识库状态保存到本地 JSON 文件</li>
+<li>Docker Compose 部署：支持一键拉起前端、后端、Qdrant</li>
+</ul>
+<h3><a name="p-15636183-h-5" class="anchor" href="#p-15636183-h-5" aria-label="标题链接"></a>模型接入能力</h3>
+<ul>
+<li>原生支持 Ollama 聊天与嵌入调用</li>
+<li>支持 OpenAI 兼容 API 聊天模型接入</li>
+<li>Chat 与 Embedding 可分别配置 Provider、Base URL、Model、API Key</li>
+<li>模型调用失败时支持降级提示，避免前端直接报错</li>
+</ul>
+<h3><a name="p-15636183-h-6" class="anchor" href="#p-15636183-h-6" aria-label="标题链接"></a>检索增强能力</h3>
+<ul>
+<li>文本自动切分与批量嵌入</li>
+<li>候选结果动态召回</li>
+<li>关键词覆盖增强重排</li>
+<li>MMR 去冗余选择</li>
+<li>低置信度场景二次扩召回</li>
+<li>嵌入缓存与可选语义缓存</li>
+<li>可选 Hybrid Search、Semantic Reranker、Query Rewrite、Context Compression</li>
+</ul>
+<hr>
+<p>补图<br>
+</p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn3.linux.do/original/4X/1/c/5/1c50ab2eebda89ca0e4726386e38fe83c38c57e2.jpeg" data-download-href="/uploads/short-url/42ucsLFqY73NG8o5NGLEtfheuXw.jpeg?dl=1" title="image"><img src="assets/001.jpg" alt="image" data-base62-sha1="42ucsLFqY73NG8o5NGLEtfheuXw" width="690" height="361" srcset="https://cdn3.linux.do/optimized/4X/1/c/5/1c50ab2eebda89ca0e4726386e38fe83c38c57e2_2_690x361.jpeg, https://cdn3.linux.do/optimized/4X/1/c/5/1c50ab2eebda89ca0e4726386e38fe83c38c57e2_2_1035x541.jpeg 1.5x, https://cdn3.linux.do/optimized/4X/1/c/5/1c50ab2eebda89ca0e4726386e38fe83c38c57e2_2_1380x722.jpeg 2x" data-dominant-color="CBCCD5"><div class="meta"><svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true"><use href="#far-image"></use></svg><span class="filename">image</span><span class="informations">1920×1007 323 KB</span><svg class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true"><use href="#discourse-expand"></use></svg></div></a></div><br>
+<div class="lightbox-wrapper"><a class="lightbox" href="https://cdn3.linux.do/original/4X/9/1/6/9160ef681a7700372f9ea891a54cb4f29c151800.jpeg" data-download-href="/uploads/short-url/kK4UMF65ktPqTkG4Wh9gGdUrsNG.jpeg?dl=1" title="image"><img src="assets/002.jpg" alt="image" data-base62-sha1="kK4UMF65ktPqTkG4Wh9gGdUrsNG" width="690" height="346" srcset="https://cdn3.linux.do/optimized/4X/9/1/6/9160ef681a7700372f9ea891a54cb4f29c151800_2_690x346.jpeg, https://cdn3.linux.do/optimized/4X/9/1/6/9160ef681a7700372f9ea891a54cb4f29c151800_2_1035x519.jpeg 1.5x, https://cdn3.linux.do/optimized/4X/9/1/6/9160ef681a7700372f9ea891a54cb4f29c151800_2_1380x692.jpeg 2x" data-dominant-color="F4F4F9"><div class="meta"><svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true"><use href="#far-image"></use></svg><span class="filename">image</span><span class="informations">1920×965 267 KB</span><svg class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true"><use href="#discourse-expand"></use></svg></div></a></div><p></p>
+<p>----分割线-----<br>
+佬友们太给力了，不得不说，佬友们都很热情，鼓励、夸赞、还有建议，感谢各位佬友。<br>
+我在这里再写一些内容吧，当作小彩蛋<br>
+首先呢这算是一个小项目，大致两周就能够完成，能够这个项目中能够学习一些新知识，我分成三个阶段</p>
+<ol>
+<li>chat、页面结构、open ai、ollama接口类型。完成后可以可以进行简单对话</li>
+<li>搭上一个知识库系统，需要给模型加上提示词，前端的渲染，这样他就会根据知识库的内容回答，完成以后其实AI的回复还是很傻，因为他根本不能阅读文档内容</li>
+<li>增强检索功能，加上rag、嵌入模型，这样它的回复才会更加精准</li>
+</ol>
+<p>然后说一下我踩过的小坑吧，前端的渲染目前还有一些问题，还有一些渲染友问题，佬友们看到不要喷我 <img src="assets/003.png" title=":sob:" class="emoji" alt=":sob:" loading="lazy" width="20" height="20"></p>
+      </article>
+    </main>
+  </body>
+</html>
