@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>【开源】Weclaw-Proxy | 专为微信 OpenClaw 打造的极简 Agent 接入网关</title>
+    <style>
+:root {
+  color-scheme: light dark;
+}
+body {
+  background: #f6f8fa;
+  color: #24292f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+  margin: 0;
+}
+.page {
+  margin: 0 auto;
+  max-width: 860px;
+  padding: 32px 20px 64px;
+}
+.meta {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  padding: 20px 24px;
+}
+.meta h1 {
+  font-size: 32px;
+  line-height: 1.25;
+  margin: 0 0 16px;
+}
+.meta-list {
+  color: #57606a;
+  display: grid;
+  gap: 8px;
+}
+.topic-body {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 28px 32px;
+}
+.topic-body img {
+  border-radius: 10px;
+  display: block;
+  height: auto;
+  margin: 16px auto;
+  max-width: 100%;
+}
+.topic-body pre {
+  background: #0d1117;
+  border-radius: 10px;
+  color: #e6edf3;
+  overflow-x: auto;
+  padding: 16px;
+}
+.topic-body code {
+  background: rgba(175, 184, 193, 0.2);
+  border-radius: 6px;
+  padding: 0.15em 0.35em;
+}
+.topic-body pre code {
+  background: transparent;
+  padding: 0;
+}
+.topic-body blockquote {
+  border-left: 4px solid #0969da;
+  color: #57606a;
+  margin: 16px 0;
+  padding: 8px 0 8px 16px;
+}
+.topic-body table {
+  border-collapse: collapse;
+  display: block;
+  margin: 16px 0;
+  overflow-x: auto;
+  width: 100%;
+}
+.topic-body th,
+.topic-body td {
+  border: 1px solid #d0d7de;
+  padding: 8px 12px;
+}
+.topic-body a {
+  color: #0969da;
+  text-decoration: none;
+}
+.topic-body a:hover {
+  text-decoration: underline;
+}
+.topic-body aside.onebox {
+  border: 1px solid #d0d7de;
+  border-radius: 10px;
+  margin: 16px 0;
+  padding: 16px;
+}
+</style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="meta">
+        <h1>【开源】Weclaw-Proxy | 专为微信 OpenClaw 打造的极简 Agent 接入网关</h1>
+        <div class="meta-list">
+          <div>作者：codermast</div>
+          <div>发布时间：2026-03-24T17:26:45.235Z</div>
+          <div>原帖链接：<a href="https://linux.do/t/topic/1809561">https://linux.do/t/topic/1809561</a></div>
+        </div>
+      </section>
+      <article class="topic-body">
+        <h4><a name="p-15581842-h-1" class="anchor" href="#p-15581842-h-1" aria-label="标题链接"></a>本帖使用社区开源推广，符合推广要求。我申明并遵循社区要求的以下内容：</h4>
+<ul>
+<li><strong>我的帖子已经打上 <a class="hashtag-cooked" href="/tag/2234-tag/2234" data-type="tag" data-slug="开源推广" data-id="2234" data-style-type="icon" data-icon="tag" data-ref="开源推广::tag"><span class="hashtag-icon-placeholder"><svg class="fa d-icon d-icon-square-full svg-icon svg-node"><use href="#square-full"></use></svg></span><span>开源推广</span></a> 标签：</strong> 是</li>
+<li><strong>我的开源项目完整开源，无未开源部分：</strong> 是</li>
+<li><strong>我的开源项目已链接认可 LINUX DO 社区：</strong> 是</li>
+<li><strong>我帖子内的项目介绍，AI生成、润色内容部分已截图发出：</strong> 是</li>
+<li><strong>以上选择我承诺是永久有效的，接受社区和佬友监督：</strong> 是</li>
+</ul>
+<p><em>以下为项目介绍正文内容，AI生成、润色内容已使用截图方式发出</em></p>
+<hr>
+<p>最近微信上线了 Claw 的接入端点，开放了底层的 iLink 协议，但是主要还是针对 OpenClaw ，我自己的需求是做了一些 Agent，想接入就比较麻烦，考虑到佬友可能也会有这个需求，就自己手写了一个基于 Go 的 WeClaw 的接入网关，尽管有一些类似的项目，但是大部分都是基于命令行，对于程序员可能来说使用没什么门槛，但是对零基础想接入扩展玩的佬友，没有可视化界面可以说是非常致命了，也是方便管理了，这里就加了可视化界面。</p>
+<p>另外的话这里是实现了一个智能路由的功能，可以正常处理发送过来的消息，不用手动填写 /target 目标端点，更加优化体验。</p>
+<p>Github：<a href="https://github.com/amigoer/weclaw-proxy" rel="noopener nofollow ugc">https://github.com/amigoer/weclaw-proxy</a></p>
+<p>下面是一些演示截图:</p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn3.linux.do/original/4X/e/5/9/e59e0e857cb895caac8d45b470c2208893dbe8e3.jpeg" data-download-href="/uploads/short-url/wLhYuBleLnTqVkFSVqhURjMCV5p.jpeg?dl=1" title="screenshot-accounts"><img src="assets/001.jpg" alt="screenshot-accounts" data-base62-sha1="wLhYuBleLnTqVkFSVqhURjMCV5p" width="690" height="455" srcset="https://cdn3.linux.do/optimized/4X/e/5/9/e59e0e857cb895caac8d45b470c2208893dbe8e3_2_690x455.jpeg, https://cdn3.linux.do/optimized/4X/e/5/9/e59e0e857cb895caac8d45b470c2208893dbe8e3_2_1035x682.jpeg 1.5x, https://cdn3.linux.do/optimized/4X/e/5/9/e59e0e857cb895caac8d45b470c2208893dbe8e3_2_1380x910.jpeg 2x" data-dominant-color="FAFAFA"><div class="meta"><svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true"><use href="#far-image"></use></svg><span class="filename">screenshot-accounts</span><span class="informations">2794×1844 214 KB</span><svg class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true"><use href="#discourse-expand"></use></svg></div></a></div><p></p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn3.linux.do/original/4X/8/c/b/8cb89640e5cfe449cf6270011c0ca1188391b933.jpeg" data-download-href="/uploads/short-url/k4SjVY08n1nr355YzqXp7gCPXdp.jpeg?dl=1" title="screenshot-addagent"><img src="assets/002.jpg" alt="screenshot-addagent" data-base62-sha1="k4SjVY08n1nr355YzqXp7gCPXdp" width="690" height="455" srcset="https://cdn3.linux.do/optimized/4X/8/c/b/8cb89640e5cfe449cf6270011c0ca1188391b933_2_690x455.jpeg, https://cdn3.linux.do/optimized/4X/8/c/b/8cb89640e5cfe449cf6270011c0ca1188391b933_2_1035x682.jpeg 1.5x, https://cdn3.linux.do/optimized/4X/8/c/b/8cb89640e5cfe449cf6270011c0ca1188391b933_2_1380x910.jpeg 2x" data-dominant-color="EAEAEA"><div class="meta"><svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true"><use href="#far-image"></use></svg><span class="filename">screenshot-addagent</span><span class="informations">2794×1844 216 KB</span><svg class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true"><use href="#discourse-expand"></use></svg></div></a></div><p></p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn3.linux.do/original/4X/7/7/a/77a1d11f4153992678c5dd65e065acff571eb279.jpeg" data-download-href="/uploads/short-url/h4jvCENa0w2AuD0tAgyre7fN8jT.jpeg?dl=1" title="screenshot-bindingsuccess"><img src="assets/003.jpg" alt="screenshot-bindingsuccess" data-base62-sha1="h4jvCENa0w2AuD0tAgyre7fN8jT" width="690" height="455" srcset="https://cdn3.linux.do/optimized/4X/7/7/a/77a1d11f4153992678c5dd65e065acff571eb279_2_690x455.jpeg, https://cdn3.linux.do/optimized/4X/7/7/a/77a1d11f4153992678c5dd65e065acff571eb279_2_1035x682.jpeg 1.5x, https://cdn3.linux.do/optimized/4X/7/7/a/77a1d11f4153992678c5dd65e065acff571eb279_2_1380x910.jpeg 2x" data-dominant-color="E7E7E7"><div class="meta"><svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true"><use href="#far-image"></use></svg><span class="filename">screenshot-bindingsuccess</span><span class="informations">2794×1844 189 KB</span><svg class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true"><use href="#discourse-expand"></use></svg></div></a></div><p></p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn3.linux.do/original/4X/3/9/6/396fcf2f95ff1b44aaffb68a79f4300990a9e247.jpeg" data-download-href="/uploads/short-url/8c6LvbOfwWiykeXJNmRlgBihtT9.jpeg?dl=1" title="screenshot-dashboard"><img src="assets/004.jpg" alt="screenshot-dashboard" data-base62-sha1="8c6LvbOfwWiykeXJNmRlgBihtT9" width="690" height="455" srcset="https://cdn3.linux.do/optimized/4X/3/9/6/396fcf2f95ff1b44aaffb68a79f4300990a9e247_2_690x455.jpeg, https://cdn3.linux.do/optimized/4X/3/9/6/396fcf2f95ff1b44aaffb68a79f4300990a9e247_2_1035x682.jpeg 1.5x, https://cdn3.linux.do/optimized/4X/3/9/6/396fcf2f95ff1b44aaffb68a79f4300990a9e247_2_1380x910.jpeg 2x" data-dominant-color="FAFAF9"><div class="meta"><svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true"><use href="#far-image"></use></svg><span class="filename">screenshot-dashboard</span><span class="informations">2794×1844 206 KB</span><svg class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true"><use href="#discourse-expand"></use></svg></div></a></div><p></p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn3.linux.do/original/4X/4/8/8/48881ed6ceb0af722f12148bd185722eac8e4c59.jpeg" data-download-href="/uploads/short-url/alE0UdjhrKYUQKRvdMUpy6iUYAh.jpeg?dl=1" title="screenshot-login"><img src="assets/005.jpg" alt="screenshot-login" data-base62-sha1="alE0UdjhrKYUQKRvdMUpy6iUYAh" width="690" height="455" srcset="https://cdn3.linux.do/optimized/4X/4/8/8/48881ed6ceb0af722f12148bd185722eac8e4c59_2_690x455.jpeg, https://cdn3.linux.do/optimized/4X/4/8/8/48881ed6ceb0af722f12148bd185722eac8e4c59_2_1035x682.jpeg 1.5x, https://cdn3.linux.do/optimized/4X/4/8/8/48881ed6ceb0af722f12148bd185722eac8e4c59_2_1380x910.jpeg 2x" data-dominant-color="E2E2E2"><div class="meta"><svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true"><use href="#far-image"></use></svg><span class="filename">screenshot-login</span><span class="informations">2794×1844 220 KB</span><svg class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true"><use href="#discourse-expand"></use></svg></div></a></div><p></p>
+<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://cdn3.linux.do/original/4X/0/3/1/0317db44019ebd0a30c5b5c1dbdb530c38e6a32f.jpeg" data-download-href="/uploads/short-url/rmxLYXgxPAE9UA7r5di218yKzJ.jpeg?dl=1" title="screenshot-routing"><img src="assets/006.jpg" alt="screenshot-routing" data-base62-sha1="rmxLYXgxPAE9UA7r5di218yKzJ" width="690" height="455" srcset="https://cdn3.linux.do/optimized/4X/0/3/1/0317db44019ebd0a30c5b5c1dbdb530c38e6a32f_2_690x455.jpeg, https://cdn3.linux.do/optimized/4X/0/3/1/0317db44019ebd0a30c5b5c1dbdb530c38e6a32f_2_1035x682.jpeg 1.5x, https://cdn3.linux.do/optimized/4X/0/3/1/0317db44019ebd0a30c5b5c1dbdb530c38e6a32f_2_1380x910.jpeg 2x" data-dominant-color="F9F9F9"><div class="meta"><svg class="fa d-icon d-icon-far-image svg-icon" aria-hidden="true"><use href="#far-image"></use></svg><span class="filename">screenshot-routing</span><span class="informations">2794×1844 249 KB</span><svg class="fa d-icon d-icon-discourse-expand svg-icon" aria-hidden="true"><use href="#discourse-expand"></use></svg></div></a></div><p></p>
+<p>另外部署的话，支持 Windows、Linux、macOS 的 amd64、arm64 版本，也提供了初版的 docker 镜像，方便大家接入。</p>
+<p>如果有帮助的话，希望大家能给点个 Star 支持一下，感谢各位佬友！ <img src="assets/007.png" title=":smiley:" class="emoji" alt=":smiley:" loading="lazy" width="20" height="20"></p>
+<hr>
+<h2><a name="p-15581842-h-2" class="anchor" href="#p-15581842-h-2" aria-label="标题链接"></a>更新记录</h2>
+<ul>
+<li>v0.1.0  初版发布，支持可视化管理，智能路由</li>
+<li>v0.1.1  新增 Codex Claude Gemini 等CLI接入</li>
+<li>v0.2.0 支持多微信接入</li>
+</ul>
+      </article>
+    </main>
+  </body>
+</html>
